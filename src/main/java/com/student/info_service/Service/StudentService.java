@@ -15,12 +15,12 @@ public class StudentService {
 
     public ResponseEntity<?> createdStudent(StudentCreatedRequestDTO dto) {
         // Check if the student with the given ID already exists
-        if (studentRepository.existsById(dto.getId())) {
-            return ResponseEntity.badRequest().body("Student with this ID already exists");
+        if (studentRepository.existsByStudentId(dto.getStudentId())) {
+            return ResponseEntity.badRequest().body("Student with this IdStudent already exists");
         }
         // Create a new Student entity and save it to the database
         Student student = new Student();
-        student.setId(dto.getId());
+        student.setStudentId(dto.getStudentId());
         student.setName(dto.getName());
         student.setAge(dto.getAge());
         // Save the student to the repository

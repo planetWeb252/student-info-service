@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentCreatedRequestDTO {
-    private long id;
+    private long studentId;
     private String name;
     private int age;
 }
